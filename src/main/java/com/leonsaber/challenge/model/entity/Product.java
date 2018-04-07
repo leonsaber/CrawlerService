@@ -10,7 +10,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private int Id;
+    private int productID;
     private int productQty;
     private double productPrice;
     private String productName;
@@ -18,11 +18,11 @@ public class Product {
     private String productURL;
 
     public int getId() {
-        return Id;
+        return productID;
     }
 
     public void setId(int id) {
-        Id = id;
+        productID = id;
     }
 
     public int getProductQty() {
