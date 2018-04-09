@@ -5,7 +5,7 @@
 
 	<groupId>com.leonsaber</groupId>
 	<artifactId>challenge</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>challenge</name>
@@ -19,6 +19,7 @@
 	</parent>
 
 	<properties>
+		<start-class>com.leonsaber.challenge.ChallengeApplication</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -68,11 +69,15 @@
 			<artifactId>spring-test</artifactId>
 			<version>4.3.13.RELEASE</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+				<configuration>
+					<mainClass>com.leonsaber.challenge.ChallengeApplication</mainClass>
+				</configuration>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
