@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
+    //RESTful APIs implementation
     List<Product> findAllByOrderByProductIDAsc();
 
     @Modifying
@@ -27,7 +28,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     Product findProductByProductID(int productID);
 
-    @Query(nativeQuery=true, value = "SELECT * FROM product p WHERE p.product_price >= abs(?1 - 0.5) AND p.product_price <= ?1 + 0.5")
+    @Query(nativeQuery=true, value = "SELECT * FROM product p WHERE p.product_price >= abs(?1 - 1) AND p.product_price <= ?1 + 1")
     List<Product> findProductsByProductPrice(double productPrice);
 
     @Query(nativeQuery=true, value = "SELECT * FROM product p WHERE p.product_qty = 1")
